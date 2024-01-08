@@ -7,9 +7,11 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/tabsContainer"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_height="0dp" />
+        app:navGraph="@navigation/tabs_nav_graph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/tabsBottomBar"
