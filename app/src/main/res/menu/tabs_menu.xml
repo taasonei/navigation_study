@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@id/colorListFragment"
+        android:icon="@drawable/ic_color"
+        android:title="@string/colors_title" />
+
+    <item
+        android:id="@id/stubFragment"
+        android:icon="@drawable/ic_stub"
+        android:title="@string/stub_title" />
+
+</menu>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tabs_nav_graph"
+    app:startDestination="@id/colorListFragment">
+
+    <fragment
+        android:id="@+id/colorListFragment"
+        android:name="com.github.taasonei.navigation_study.color.ui.ColorListFragment"
+        android:label="ColorListFragment"
+        tools:layout="@layout/fragment_color_list" />
+
+    <fragment
+        android:id="@+id/stubFragment"
+        android:name="com.github.taasonei.navigation_study.StubFragment"
+        android:label="StubFragment"
+        tools:layout="@layout/fragment_stub" />
+
+</navigation>

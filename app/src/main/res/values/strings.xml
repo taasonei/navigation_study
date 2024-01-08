@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">navigation_study</string>
+    <string name="colors_title">Цвета</string>
+    <string name="stub_title">Заглушка</string>
 </resources>
