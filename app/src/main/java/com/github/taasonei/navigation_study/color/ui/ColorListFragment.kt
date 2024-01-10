@@ -1,16 +1,18 @@
 package com.github.taasonei.navigation_study.color.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.github.taasonei.navigation_study.R
 import com.github.taasonei.navigation_study.color.presentation.ColorViewModel
 import com.github.taasonei.navigation_study.color.ui.recycler.ColorAdapter
 import com.github.taasonei.navigation_study.databinding.FragmentColorListBinding
@@ -39,7 +41,14 @@ class ColorListFragment : Fragment() {
 
     private fun setupAdapter() {
         adapter = ColorAdapter(
-            onClick = { colorData -> Log.d("colorData", "$colorData") }
+            onClick = { colorData ->
+                Navigation
+                    .findNavController(requireActivity(), R.id.mainContainer)
+                    .navigate(
+                        R.id.global_action_colorDetailsFragment,
+                        bundleOf(COLOR_DATA to colorData)
+                    )
+            }
         )
         adapter?.stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
         binding.colorRecycler.adapter = adapter
@@ -59,5 +68,9 @@ class ColorListFragment : Fragment() {
         super.onDestroyView()
         _binding = null
         adapter = null
+    }
+
+    companion object {
+        const val COLOR_DATA = "color_data"
     }
 }

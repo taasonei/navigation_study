@@ -15,6 +15,15 @@
         android:id="@+id/colorDetailsFragment"
         android:name="com.github.taasonei.navigation_study.color.ui.ColorDetailsFragment"
         android:label="ColorDetailsFragment"
-        tools:layout="@layout/fragment_color_details" />
+        tools:layout="@layout/fragment_color_details">
+        <argument
+            android:name="colorData"
+            app:argType="com.github.taasonei.navigation_study.color.data.ColorData" />
+    </fragment>
+
+
+    <action
+        android:id="@+id/global_action_colorDetailsFragment"
+        app:destination="@id/colorDetailsFragment" />
 
 </navigation>

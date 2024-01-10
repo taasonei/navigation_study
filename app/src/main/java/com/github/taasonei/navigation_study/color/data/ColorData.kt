@@ -1,9 +1,13 @@
 package com.github.taasonei.navigation_study.color.data
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 internal data class ColorData(
     val name: String,
     val color: String,
-)
+) : Parcelable
 
 internal object ColorGenerator {
     private val colorList = listOf(
