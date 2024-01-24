@@ -10,6 +10,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.github.taasonei.navigation_study.R
 import com.github.taasonei.navigation_study.databinding.FragmentDigitGeneratorBinding
 import com.github.taasonei.navigation_study.digit.presentation.DigitGeneratorViewModel
@@ -31,7 +33,16 @@ class DigitGeneratorFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.generateDigitDescription.text =
             getString(R.string.generated_digit_title, "")
+        setupActionBar()
         initListeners()
+    }
+
+    private fun setupActionBar() {
+        val appBarConfiguration = AppBarConfiguration(findNavController().graph)
+        binding.digitGeneratorToolBar.apply {
+            setupWithNavController(findNavController(), appBarConfiguration)
+            title = getString(R.string.digits_title)
+        }
     }
 
     private fun initListeners() {

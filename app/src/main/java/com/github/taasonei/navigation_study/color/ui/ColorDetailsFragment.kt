@@ -7,6 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
+import com.github.taasonei.navigation_study.R
 import com.github.taasonei.navigation_study.color.data.ColorData
 import com.github.taasonei.navigation_study.databinding.FragmentColorDetailsBinding
 
@@ -23,6 +27,8 @@ class ColorDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupActionBar()
+
         val colorData = if (Build.VERSION.SDK_INT > Build.VERSION_CODES.S_V2) {
             arguments?.getParcelable<ColorData>(ColorListFragment.COLOR_DATA, ColorData::class.java)
         } else {
@@ -32,6 +38,14 @@ class ColorDetailsFragment : Fragment() {
         colorData?.let { colorData ->
             binding.detailsColorName.text = colorData.name
             binding.root.setBackgroundColor(Color.parseColor(colorData.color))
+        }
+    }
+
+    private fun setupActionBar() {
+        val appBarConfiguration = AppBarConfiguration(findNavController().graph)
+        binding.colorToolBar.apply {
+            setupWithNavController(findNavController(), appBarConfiguration)
+            title = getString(R.string.colors_title)
         }
     }
 
