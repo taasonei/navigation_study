@@ -17,4 +17,20 @@
         android:label="StubFragment"
         tools:layout="@layout/fragment_stub" />
 
+    <fragment
+        android:id="@+id/digitResultFragment"
+        android:name="com.github.taasonei.navigation_study.digit.ui.DigitResultFragment"
+        android:label="DigitResultFragment"
+        tools:layout="@layout/fragment_digit_result">
+        <action
+            android:id="@+id/action_digitResultFragment_to_digitGeneratorFragment"
+            app:destination="@id/digitGeneratorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/digitGeneratorFragment"
+        android:name="com.github.taasonei.navigation_study.digit.ui.DigitGeneratorFragment"
+        android:label="DigitGeneratorFragment"
+        tools:layout="@layout/fragment_digit_generator" />
+
 </navigation>

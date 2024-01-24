@@ -7,6 +7,11 @@
         android:title="@string/colors_title" />
 
     <item
+        android:id="@id/digitResultFragment"
+        android:icon="@drawable/ic_digit"
+        android:title="@string/digits_title" />
+
+    <item
         android:id="@id/stubFragment"
         android:icon="@drawable/ic_stub"
         android:title="@string/stub_title" />

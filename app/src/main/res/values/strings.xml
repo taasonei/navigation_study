@@ -2,4 +2,9 @@
     <string name="app_name">navigation_study</string>
     <string name="colors_title">Цвета</string>
     <string name="stub_title">Заглушка</string>
+    <string name="generated_digit_title">Сгенерированное число: %1$s</string>
+    <string name="digit_generate_title">Сгенерировать число</string>
+    <string name="return_digit_title">Вернуть число</string>
+    <string name="empty_digit_title">Число еще не сгенерировано, показывать нечего</string>
+    <string name="digits_title">Числа</string>
 </resources>
